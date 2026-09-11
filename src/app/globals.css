@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #07090e;
+    --foreground: #f8fafc;
+    --card: #0d111a;
+    --card-foreground: #f8fafc;
+    --popover: #0d111a;
+    --popover-foreground: #f8fafc;
+    --primary: #0066ff;
+    --primary-hover: #257bff;
+    --primary-glow: rgba(0, 102, 255, 0.25);
+    --secondary: #141a28;
+    --secondary-foreground: #94a3b8;
+    --accent: #ff5500;
+    --muted: #1a2234;
+    --muted-foreground: #64748b;
+    --border: #1e293b;
+    --border-highlight: #334155;
+    --radius: 0.5rem;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Technical Grid Pattern Background */
+.bg-tech-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.bg-radial-glow {
+  background: radial-gradient(circle at 50% 20%, rgba(0, 102, 255, 0.12) 0%, rgba(7, 9, 14, 0) 70%);
+}
+
+.bg-radial-industrial {
+  background: radial-gradient(circle at 80% 50%, rgba(255, 85, 0, 0.08) 0%, rgba(7, 9, 14, 0) 65%);
+}
+
+/* Glassmorphism Industrial Card */
+.glass-panel {
+  background: rgba(13, 17, 26, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  border-color: rgba(0, 102, 255, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(0, 102, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Technical Metallic Border & Text Accent */
+.text-gradient-tech {
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, #60a5fa 0%, #0066ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-orange {
+  background: linear-gradient(135deg, #ff8800 0%, #ff5500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #07090e;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0066ff;
+}
+
+/* Custom animations */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(0.99); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 4s ease-in-out infinite;
+}
+
+@keyframes float-gear {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(180deg); }
+}
+
+.animate-float-gear {
+  animation: float-gear 20s linear infinite;
+}
